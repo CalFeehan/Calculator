@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Callum.Feehan\\OneDrive\\Documents\\Apprenticeship\\C Sharp Introduction\\New folder\\Calculator\\Calculator\\Calculator.csproj",
+      "projectUniqueName": "C:\\Users\\Callum.Feehan\\OneDrive\\Documents\\Apprenticeship\\C Sharp Introduction\\Calculator\\Calculator\\Calculator.csproj",
       "projectName": "Calculator",
-      "projectPath": "C:\\Users\\Callum.Feehan\\OneDrive\\Documents\\Apprenticeship\\C Sharp Introduction\\New folder\\Calculator\\Calculator\\Calculator.csproj",
+      "projectPath": "C:\\Users\\Callum.Feehan\\OneDrive\\Documents\\Apprenticeship\\C Sharp Introduction\\Calculator\\Calculator\\Calculator.csproj",
       "packagesPath": "C:\\Users\\Callum.Feehan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Callum.Feehan\\OneDrive\\Documents\\Apprenticeship\\C Sharp Introduction\\New folder\\Calculator\\Calculator\\obj\\",
+      "outputPath": "C:\\Users\\Callum.Feehan\\OneDrive\\Documents\\Apprenticeship\\C Sharp Introduction\\Calculator\\Calculator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Callum.Feehan\\AppData\\Roaming\\NuGet\\NuGet.Config",
