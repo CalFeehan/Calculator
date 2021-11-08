@@ -6,7 +6,8 @@ namespace Calculator
     {
 
         static void Main(string[] args)
-        {
+        {   
+            // First pass ensure value assigned to variable. Ensures operator passed in.
             string userOperator;
             do 
             {
@@ -15,6 +16,7 @@ namespace Calculator
 
             } while (userOperator != "+" && userOperator != "-" && userOperator != "*" && userOperator != "/");
 
+            // Do not extend below loop. Be careful when modifying not to create infinite loop.
             int number1;
             while (true)
             {
@@ -32,11 +34,13 @@ namespace Calculator
                 break;
             }
 
+            // Do not extend below loop. Be careful when modifying not to create infinite loop.
             int number2;
             while (true)
             {
                 Console.Write("Please enter second number: ");
                 string userNumber2 = Console.ReadLine();
+                
                 try
                 {
                     number2 = Int32.Parse(userNumber2);
@@ -49,6 +53,7 @@ namespace Calculator
                 break;
             }
 
+            // Performs calculations
             switch (userOperator){
                 case "+":
                     Console.Write(number1 + number2);
