@@ -7,6 +7,14 @@ namespace Calculator
 
         static void Main(string[] args)
         {
+            string userOperator;
+            do 
+            {
+                Console.Write("Please enter operator (+ - / *): ");
+                userOperator = Console.ReadLine();
+
+            } while (userOperator != "+" && userOperator != "-" && userOperator != "*" && userOperator != "/");
+
             int number1;
             while (true)
             {
@@ -41,8 +49,22 @@ namespace Calculator
                 break;
             }
 
-            Console.Write(number1 * number2);
-
+            switch (userOperator){
+                case "+":
+                    Console.Write(number1 + number2);
+                    break;
+                case "-":
+                    Console.Write(number1 - number2);
+                    break;
+                case "*":
+                    Console.Write(number1 * number2);
+                    break;
+                case "/":
+                    Console.Write(number1 / number2);
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }
