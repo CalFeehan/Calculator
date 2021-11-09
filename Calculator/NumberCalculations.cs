@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Calculator
 {
-    class Calculations
+    class NumberCalculations
     {
         public static string InputOperator()
         // First pass ensure value assigned to variable. Ensures operator passed in.
@@ -23,7 +23,6 @@ namespace Calculator
 
         public static int InputIterations()
         {
-            // Do not extend below loop. Be careful when modifying not to create infinite loop.
             int iterations;
             while (true)
             {
@@ -51,7 +50,6 @@ namespace Calculator
             int[] intArray = new int[iterations];
             for (int i = 0; i < iterations; i++)
             {
-                // Do not extend below loop. Be careful when modifying not to create infinite loop.
                 while (true)
                 {
                     Console.Write($"Please enter number {i + 1}: ");
@@ -74,7 +72,6 @@ namespace Calculator
 
         public static double PerformCalculation(string userOperator, int iterations, int[] intArray)
         {
-            // Performs calculations
             double result = Convert.ToDouble(intArray[0]);
             switch (userOperator)
             {
@@ -98,27 +95,6 @@ namespace Calculator
                     break;
             }
             return result;
-        }
-
-        public static bool Repeat()
-        {
-            while (true)
-            {
-                Console.Write("Restart? (y/n)");
-                string retry = Console.ReadLine();
-                if (retry == "y" || retry == "Y")
-                {
-                    return true;
-                }
-                else if (retry == "n" || retry == "N")
-                {
-                    return false;
-                }
-                else
-                {
-                    continue;
-                }
-            }
         }
     }
 }
