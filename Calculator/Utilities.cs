@@ -7,7 +7,7 @@ namespace Calculator
 {
     class Utilities
     {
-        private const string path = @"C:\Users\Callum.Feehan\Downloads";
+        private const string path = @"C:\Users\Callum.Feehan\Downloads\Log.txt";
 
         public static int InputCalculatorType()
         {
@@ -49,19 +49,9 @@ namespace Calculator
 
         public static void ResetDataLog()
         {
-            if (File.Exists(path))
-            {
-                Console.WriteLine("File found");
-                File.Delete(path);
-                Console.WriteLine("File deleted");
-            }
-            else
-            {
-                Console.WriteLine("No file found");
-            }
             using (FileStream fs = File.Create(path))
             {
-                byte[] opener = new UTF8Encoding(true).GetBytes($"Calculations Log: {DateTime.Now}.");
+                byte[] opener = new UTF8Encoding(true).GetBytes($"Calculations Log: {DateTime.Now}. \n");
                 fs.Write(opener, 0, opener.Length);
                 Console.WriteLine("File created");
             }
@@ -69,7 +59,7 @@ namespace Calculator
 
         public static void AppendDataLog(string questionToAddToLog, string resultToAddToLog)
         {
-            string addToLog = questionToAddToLog + " = " + resultToAddToLog;
+            string addToLog = questionToAddToLog + " = " + resultToAddToLog + "\n";
             File.AppendAllText(path, addToLog);
         }
     }

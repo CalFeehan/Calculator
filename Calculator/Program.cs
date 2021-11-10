@@ -7,7 +7,7 @@ namespace Calculator
 
         static void Main(string[] args)
         {
-            // Utilities.ResetDataLog();
+            Utilities.ResetDataLog();
             Console.WriteLine("Welcome to the calculator!");
             Console.WriteLine("==========================");
 
@@ -25,7 +25,7 @@ namespace Calculator
                     double result = NumberCalculations.PerformCalculation(userOperator, iterations, intArray);
                     Console.WriteLine(result);
 
-                    // Utilities.AppendDataLog(String.Join(userOperator, intArray), result.ToString());
+                    Utilities.AppendDataLog(String.Join(userOperator, intArray), result.ToString());
                 } 
                 else if (choice == 2)
                 {
@@ -34,7 +34,7 @@ namespace Calculator
                     string result = DateCalculations.PerformCalculation(userDate, daysToAdd);
                     Console.WriteLine(result);
 
-                    // Utilities.AppendDataLog($"{userDate} + {daysToAdd} days = ", result);
+                    Utilities.AppendDataLog($"{userDate} + {daysToAdd} days = ", result);
                 } else
                 {
                     repeat = false;
