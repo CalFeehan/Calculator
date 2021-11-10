@@ -8,10 +8,8 @@ namespace Calculator
     {
         private DataLog dataLog;
 
-        public DateCalculator(DataLog dataLog)
-        {
-            this.dataLog = dataLog;
-        }
+        // constructor
+        public DateCalculator(DataLog dataLog) { this.dataLog = dataLog; }
 
         public void RunDateCalculator()
         {
@@ -30,10 +28,7 @@ namespace Calculator
                 Console.Write("Please enter a date (dd/mm/yyyy): ");
                 string stringDate = Console.ReadLine();
 
-                try
-                {
-                    userDate = DateTime.Parse(stringDate);
-                }
+                try { userDate = DateTime.Parse(stringDate); }
                 catch (FormatException)
                 {
                     Console.WriteLine("Please enter date as dd/mm/yyyy");
@@ -41,7 +36,6 @@ namespace Calculator
                 }
                 break;
             }
-
             return userDate;
         }
 
@@ -53,10 +47,7 @@ namespace Calculator
                 Console.Write("Days do you want to add? ");
                 string userDaysToAdd = Console.ReadLine();
 
-                try
-                {
-                    daysToAdd = int.Parse(userDaysToAdd);
-                }
+                try { daysToAdd = int.Parse(userDaysToAdd); }
                 catch (FormatException)
                 {
                     Console.WriteLine("Whole numbers only please.");
@@ -64,7 +55,6 @@ namespace Calculator
                 }
                 break;
             }
-
             return daysToAdd;
         }
 

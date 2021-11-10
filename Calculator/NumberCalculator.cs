@@ -8,10 +8,8 @@ namespace Calculator
     {
         private DataLog dataLog;
 
-        public NumberCalculator(DataLog dataLog)
-        {
-            this.dataLog = dataLog;
-        }
+        // constructor
+        public NumberCalculator(DataLog dataLog) { this.dataLog = dataLog; }
 
         public void RunNumberCalculator()
         {
@@ -44,10 +42,7 @@ namespace Calculator
                 Console.Write("How many numbers do you want? ");
                 string userIterations = Console.ReadLine();
 
-                try
-                {
-                    iterations = int.Parse(userIterations);
-                }
+                try { iterations = int.Parse(userIterations); }
                 catch (FormatException)
                 {
                     Console.WriteLine("Whole numbers only please.");
@@ -63,16 +58,15 @@ namespace Calculator
         {
             List<string> stringList = new List<string>();
             List<int> intList = new List<int>();
+
             for (int i = 0; i < iterations; i++)
             {
                 while (true)
                 {
                     Console.Write($"Please enter number {i + 1}: ");
                     stringList[i] = Console.ReadLine();
-                    try
-                    {
-                        intList[i] = int.Parse(stringList[i]);
-                    }
+
+                    try { intList[i] = int.Parse(stringList[i]); }
                     catch (FormatException)
                     {
                         Console.WriteLine("Whole numbers only please.");

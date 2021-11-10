@@ -7,26 +7,19 @@ namespace Calculator
 {
     class Helper
     {
-        public Helper()
-        {
 
-        }
-
-        public static int InputCalculatorType()
+        public static string InputCalculatorType()
         {
             while (true)
             {
-                Console.WriteLine("Which calculator mode would you like? ");
-                Console.WriteLine("1) Numbers");
-                Console.WriteLine("2) Dates");
-                Console.WriteLine("3) Exit");
+                Console.WriteLine("Which calculator mode would you like? \n 1) Numbers \n 2) Dates \n 3) Exit");
                 string userChoice = Console.ReadLine();
 
                 switch (userChoice)
                 {
-                    case "1": return 1;
-                    case "2": return 2;
-                    case "3": return 3;
+                    case "1": return "Number";
+                    case "2": return "Dates";
+                    case "3": return "Exit";
                     default:
                         Console.WriteLine("Please enter 1, 2 or 3.");
                         continue;

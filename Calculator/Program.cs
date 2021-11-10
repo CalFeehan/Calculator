@@ -16,12 +16,12 @@ namespace Calculator
             bool repeat = true;
             while (repeat)
             {
-                int choice = Helper.InputCalculatorType();
+                string choice = Helper.InputCalculatorType();
 
                 switch (choice)
                 {
-                    case 1: numberCalculator.RunNumberCalculator(); break;
-                    case 2: dateCalculator.RunDateCalculator(); break;
+                    case "Number": numberCalculator.RunNumberCalculator(); break;
+                    case "Dates": dateCalculator.RunDateCalculator(); break;
                     default: repeat = false; continue;
                 }
                 
