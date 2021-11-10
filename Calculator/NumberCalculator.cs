@@ -17,9 +17,9 @@ namespace Calculator
         {
             string userOperator = InputOperator();
             int iterations = InputIterations();
-            int[] intArray = (int[])InputNumbers(iterations).Clone();
-            double result = PerformCalculation(userOperator, iterations, intArray);
-            dataLog.AppendDataLog(String.Join(userOperator, intArray), result.ToString());
+            List<int> intList = InputNumbers(iterations);
+            double result = PerformCalculation(userOperator, iterations, intList);
+            dataLog.AppendDataLog(String.Join(userOperator, intList), result.ToString());
             Console.WriteLine(result);
         }
 
@@ -59,19 +59,19 @@ namespace Calculator
             return iterations;
         }
 
-        private Array InputNumbers(int iterations)
+        private List<int> InputNumbers(int iterations)
         {
-            string[] stringArray = new string[iterations];
-            int[] intArray = new int[iterations];
+            List<string> stringList = new List<string>();
+            List<int> intList = new List<int>();
             for (int i = 0; i < iterations; i++)
             {
                 while (true)
                 {
                     Console.Write($"Please enter number {i + 1}: ");
-                    stringArray[i] = Console.ReadLine();
+                    stringList[i] = Console.ReadLine();
                     try
                     {
-                        intArray[i] = int.Parse(stringArray[i]);
+                        intList[i] = int.Parse(stringList[i]);
                     }
                     catch (FormatException)
                     {
@@ -82,29 +82,29 @@ namespace Calculator
                 }
             }
 
-            return intArray;
+            return intList;
         }
 
-        private double PerformCalculation(string userOperator, int iterations, int[] intArray)
+        private double PerformCalculation(string userOperator, int iterations, List<int> intList)
         {
-            double result = Convert.ToDouble(intArray[0]);
+            double result = Convert.ToDouble(intList[0]);
             switch (userOperator)
             {
                 case "+":
                     for (int i = 1; i < iterations; i++)
-                        result += Convert.ToDouble(intArray[i]);
+                        result += Convert.ToDouble(intList[i]);
                     return result;
                 case "-":
                     for (int i = 1; i < iterations; i++)
-                        result -= Convert.ToDouble(intArray[i]);
+                        result -= Convert.ToDouble(intList[i]);
                     return result;
                 case "*":
                     for (int i = 1; i < iterations; i++)
-                        result *= Convert.ToDouble(intArray[i]);
+                        result *= Convert.ToDouble(intList[i]);
                     return result;
                 case "/":
                     for (int i = 1; i < iterations; i++)
-                        result /= Convert.ToDouble(intArray[i]);
+                        result /= Convert.ToDouble(intList[i]);
                     return result;
                 default:
                     break;
