@@ -4,11 +4,26 @@ using System.Text;
 
 namespace Calculator
 {
-    class NumberCalculations
+    class NumberCalculator
     {
-        public static string InputOperator()
-        // First pass ensure value assigned to variable. Ensures operator passed in.
+        private DataLog dataLog;
 
+        public NumberCalculator(DataLog dataLog)
+        {
+            this.dataLog = dataLog;
+        }
+
+        public void RunNumberCalculator()
+        {
+            string userOperator = InputOperator();
+            int iterations = InputIterations();
+            int[] intArray = (int[])InputNumbers(iterations).Clone();
+            double result = PerformCalculation(userOperator, iterations, intArray);
+            dataLog.AppendDataLog(String.Join(userOperator, intArray), result.ToString());
+            Console.WriteLine(result);
+        }
+
+        private string InputOperator()
         {
             string userOperator;
             do
@@ -21,7 +36,7 @@ namespace Calculator
             return userOperator;
         }   
 
-        public static int InputIterations()
+        private int InputIterations()
         {
             int iterations;
             while (true)
@@ -44,7 +59,7 @@ namespace Calculator
             return iterations;
         }
 
-        public static Array InputNumbers(int iterations)
+        private Array InputNumbers(int iterations)
         {
             string[] stringArray = new string[iterations];
             int[] intArray = new int[iterations];
@@ -70,7 +85,7 @@ namespace Calculator
             return intArray;
         }
 
-        public static double PerformCalculation(string userOperator, int iterations, int[] intArray)
+        private double PerformCalculation(string userOperator, int iterations, int[] intArray)
         {
             double result = Convert.ToDouble(intArray[0]);
             switch (userOperator)

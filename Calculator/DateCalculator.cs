@@ -4,9 +4,25 @@ using System.Text;
 
 namespace Calculator
 {
-    class DateCalculations
+    class DateCalculator
     {
-        public static DateTime InputDate()
+        private DataLog dataLog;
+
+        public DateCalculator(DataLog dataLog)
+        {
+            this.dataLog = dataLog;
+        }
+
+        public void RunDateCalculator()
+        {
+            DateTime userDate = InputDate();
+            int daysToAdd = InputDaysToAdd();
+            string result = PerformCalculation(userDate, daysToAdd);
+            dataLog.AppendDataLog($"{userDate} + {daysToAdd} days = ", result);
+            Console.WriteLine(result);
+        }
+
+        private DateTime InputDate()
         {
             DateTime userDate = new DateTime();
             while (true)
@@ -29,7 +45,7 @@ namespace Calculator
             return userDate;
         }
 
-        public static int InputDaysToAdd()
+        private int InputDaysToAdd()
         {
             int daysToAdd;
             while (true)
@@ -52,7 +68,7 @@ namespace Calculator
             return daysToAdd;
         }
 
-        public static string PerformCalculation(DateTime userDate, int daysToAdd)
+        private string PerformCalculation(DateTime userDate, int daysToAdd)
         {
             return userDate.AddDays(daysToAdd).ToShortDateString();
         }

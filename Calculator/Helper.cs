@@ -5,9 +5,12 @@ using System.IO;
 
 namespace Calculator
 {
-    class Utilities
+    class Helper
     {
-        private const string path = @"C:\Users\Callum.Feehan\Downloads\Log.txt";
+        public Helper()
+        {
+
+        }
 
         public static int InputCalculatorType()
         {
@@ -45,22 +48,6 @@ namespace Calculator
                     default: continue;
                 }
             }
-        }
-
-        public static void ResetDataLog()
-        {
-            using (FileStream fs = File.Create(path))
-            {
-                byte[] opener = new UTF8Encoding(true).GetBytes($"Calculations Log: {DateTime.Now}. \n");
-                fs.Write(opener, 0, opener.Length);
-                Console.WriteLine("File created");
-            }
-        }
-
-        public static void AppendDataLog(string questionToAddToLog, string resultToAddToLog)
-        {
-            string addToLog = questionToAddToLog + " = " + resultToAddToLog + "\n";
-            File.AppendAllText(path, addToLog);
         }
     }
 }
