@@ -24,7 +24,7 @@ namespace Calculator
                     case "Dates": dateCalculator.RunDateCalculator(); break;
                     default: repeat = false; continue;
                 }
-                
+
                 repeat = Helper.Repeat();
             }
         }

@@ -55,8 +55,7 @@ namespace Calculator
         }
 
         private List<int> InputNumbers(int iterations)
-        {
-            List<string> stringList = new List<string>();
+        { 
             List<int> intList = new List<int>();
 
             for (int i = 0; i < iterations; i++)
@@ -64,9 +63,9 @@ namespace Calculator
                 while (true)
                 {
                     Console.Write($"Please enter number {i + 1}: ");
-                    stringList[i] = Console.ReadLine();
+                    string userInput = Console.ReadLine();
 
-                    try { intList[i] = int.Parse(stringList[i]); }
+                    try { intList.Add(int.Parse(userInput)); }
                     catch (FormatException)
                     {
                         Console.WriteLine("Whole numbers only please.");
